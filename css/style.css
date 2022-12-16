@@ -1,0 +1,529 @@
+* {
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Dark-Blue: hsl(233, 26%, 24%);
+  --Lime-Green: hsl(136, 65%, 51%);
+  --Bright-Cyan: hsl(192, 70%, 51%);
+  --Grayish-Blue: hsl(233, 8%, 62%);
+  --Light-GrayishBlue: hsl(220, 16%, 96%);
+  --Very-LightGray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  overflow-x: hidden;
+}
+body nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  padding: 2rem 5rem;
+  z-index: 100;
+}
+body nav .list {
+  position: relative;
+  width: 27px;
+  height: 1px;
+  background-color: black;
+  cursor: pointer;
+  display: none;
+}
+body nav .list::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 27px;
+  height: 1px;
+  background-color: black;
+}
+body nav .list::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  width: 27px;
+  height: 1px;
+  background-color: black;
+}
+body nav .navbar {
+  z-index: 100;
+  display: flex;
+  column-gap: 20px;
+}
+body nav .navbar a {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 1.1rem;
+  position: relative;
+}
+body nav .navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -86%;
+  transform-origin: center;
+  transform: scaleX(0);
+  width: 100%;
+  height: 3px;
+  background-image: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+}
+body nav .navbar a:hover:after {
+  transform: scaleX(1);
+  transition: 0.3s;
+}
+body nav .navbar a:hover {
+  color: var(--Dark-Blue);
+  transition: 0.3s;
+}
+body nav .invite button {
+  padding: 12px 25px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  background-image: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+body nav .invite button:hover {
+  opacity: 0.7;
+}
+body .active {
+  opacity: 1 !important;
+  z-index: 101;
+}
+body section {
+  display: flex;
+  max-width: 100%;
+  padding: 0 5rem;
+  box-sizing: border-box;
+}
+body .section-one {
+  width: 100vw;
+  background-color: hsl(0deg, 0%, 98%);
+  position: relative;
+  z-index: 1;
+}
+body .section-one .intro {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body .section-one .intro .textBox {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+body .section-one .intro .textBox h1 {
+  font-size: 3rem;
+  font-weight: lighter;
+  color: var(--Dark-Blue);
+}
+body .section-one .intro .textBox .sec {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 1rem;
+}
+body .section-one .intro .textBox .invite button {
+  padding: 12px 25px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  background-image: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  cursor: pointer;
+}
+body .section-one .intro .textBox button:hover {
+  opacity: 0.7;
+}
+body .section-one .intro .imgDiv {
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 100%;
+  background-image: url(/easybank-landing-page-master/images/bg-intro-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 5rem;
+  background-size: cover;
+}
+body .section-one .intro .imgDiv img {
+  z-index: 1;
+  right: 0px;
+  top: 20px;
+  width: 650px;
+}
+body .section-two {
+  flex-direction: column;
+  row-gap: 50px;
+  width: 100vw;
+  background-color: var(--Light-GrayishBlue);
+  padding: 4rem 5rem;
+}
+body .section-two .header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+body .section-two .header .title {
+  font-weight: lighter;
+  font-size: 2rem;
+  color: var(--Dark-Blue);
+}
+body .section-two .header .sec {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 1rem;
+}
+body .section-two .offers {
+  display: flex;
+  justify-content: space-between;
+}
+body .section-two .offers .offer {
+  font-weight: light;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 22%;
+}
+body .section-two .offers .offer .sec {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 0.9rem;
+}
+body .section-two .offers .offer img {
+  width: 50px;
+}
+body .section-three {
+  flex-direction: column;
+  row-gap: 80px;
+  padding: 5rem;
+  background-color: hsl(0deg, 0%, 98%);
+}
+body .section-three .header .title {
+  font-size: 3rem;
+  color: var(--Dark-Blue);
+  font-weight: lighter;
+}
+body .section-three .articles {
+  display: flex;
+  column-gap: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .section-three .articles .article {
+  border-radius: 8px;
+  width: 25%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+body .section-three .articles .article .top {
+  width: 100%;
+  height: 16rem;
+  background-size: cover;
+}
+body .section-three .articles .article .bottom {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-top: 20px;
+}
+body .section-three .articles .article .bottom .author {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 0.8rem;
+}
+body .section-three .articles .article .bottom .articleTitle {
+  color: var(--Dark-Blue);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+body .section-three .articles .article .bottom .articleTitle:hover {
+  color: var(--Lime-Green);
+}
+body .section-three .articles .article .bottom .desc {
+  color: hsl(233deg, 8%, 62%);
+}
+body footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 2rem 5rem;
+  background-color: var(--Dark-Blue);
+}
+body footer .leftSide {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 70%;
+}
+body footer .leftSide .footerLinks {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 15px;
+  text-align: center;
+}
+body footer .leftSide .col {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+body footer .leftSide .col .logo {
+  width: 150px;
+}
+body footer .leftSide .col span {
+  font-size: 0.8rem;
+  color: var(--Very-LightGray);
+  cursor: pointer;
+  width: 100px;
+}
+body footer .leftSide .col span:hover {
+  color: var(--Lime-Green);
+}
+body footer .leftSide .col .socials i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  color: white;
+}
+body footer .leftSide .col .socials i:hover {
+  color: var(--Lime-Green);
+  cursor: pointer;
+}
+body footer .leftSide .col-1 {
+  row-gap: 40px;
+}
+body footer .rightSide {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  text-align: center;
+}
+body footer .rightSide .invite button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-image: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  cursor: pointer;
+}
+body footer .rightSide .invite button:hover {
+  opacity: 0.7;
+}
+body footer .rightSide .copyRight {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 0.8rem;
+}
+body footer .creator {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+body footer .creator p {
+  font-size: 0.7rem;
+  color: hsl(233deg, 8%, 62%);
+  cursor: pointer;
+}
+body footer .creator a {
+  color: white;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+body footer .creator a:hover {
+  color: var(--Lime-Green);
+}
+
+@media only screen and (max-width: 1230px) {
+  .section-three .articles .article .desc {
+    font-size: 0.8rem !important;
+  }
+  .section-three .articles .article .articleTitle {
+    font-size: 1.1rem !important;
+  }
+  .section-three .articles .article .author {
+    font-size: 0.7rem !important;
+  }
+}
+@media only screen and (max-width: 987px) {
+  footer {
+    column-gap: 80px;
+  }
+}
+@media only screen and (max-width: 1085px) {
+  .section-one .imgDiv img {
+    top: 90px !important;
+    width: 450px !important;
+  }
+  .section-one .textBox .title {
+    font-size: 2.5rem !important;
+  }
+  .section-one .textBox .sec {
+    font-size: 0.8rem !important;
+  }
+  .section-one .textBox button {
+    font-size: 0.8rem !important;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .section-one .textBox .title {
+    font-size: 2.2rem !important;
+  }
+  .section-one .textBox .sec {
+    font-size: 0.8rem !important;
+  }
+  .section-one .textBox button {
+    font-size: 0.8rem !important;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .section-one {
+    padding: 0 !important;
+  }
+  .section-one .intro {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    row-gap: 40px !important;
+  }
+  .section-one .intro .imgDiv {
+    width: 100%;
+    position: relative;
+    display: block;
+    background-image: url(/easybank-landing-page-master/images/bg-intro-mobile.svg) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-size: cover !important;
+    background-position-x: center !important;
+  }
+  .section-one .intro .textBox {
+    width: 100% !important;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+  nav {
+    padding: 0 2rem !important;
+  }
+  nav .list {
+    display: block !important;
+  }
+  nav .navbar {
+    position: absolute;
+    top: 8%;
+    right: 0;
+    flex-direction: column !important;
+    row-gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 0;
+    border-radius: 15px;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  nav .navbar a {
+    color: var(--Dark-Blue) !important;
+    font-size: 1.2rem !important;
+  }
+  nav button {
+    display: none !important;
+  }
+  .section-two {
+    padding: 0 !important;
+    align-items: center !important;
+    padding-bottom: 2rem !important;
+  }
+  .section-two .header {
+    margin-top: 80px;
+    text-align: center;
+  }
+  .section-two .offers {
+    flex-direction: column !important;
+    align-items: center !important;
+    row-gap: 25px;
+  }
+  .section-two .offers .offer {
+    align-items: center;
+    width: 80% !important;
+    text-align: center;
+  }
+  .section-two .offers img {
+    width: 70px !important;
+  }
+  .section-two .offers .title {
+    font-size: 1.3rem !important;
+  }
+  .section-three {
+    padding: 0 2.8rem !important;
+  }
+  .section-three .title {
+    margin-top: 80px;
+    text-align: center !important;
+  }
+  .section-three .articles {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important;
+    row-gap: 20px;
+  }
+  .section-three .articles .article {
+    width: 100% !important;
+  }
+  footer {
+    margin-top: 80px;
+    flex-direction: column !important;
+    row-gap: 30px !important;
+    padding: 2rem 0 !important;
+  }
+  footer .leftSide {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    row-gap: 15px;
+  }
+  footer .leftSide .footerLinks {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    row-gap: 15px !important;
+    text-align: center !important;
+  }
+  footer .leftSide .col-1 {
+    row-gap: 40px;
+  }
+  footer .rightSide {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  footer .rightSide button {
+    font-size: 1rem !important;
+  }
+}
+@media only screen and (max-width: 444px) {
+  .section-one .imgDiv img {
+    width: 330px !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
