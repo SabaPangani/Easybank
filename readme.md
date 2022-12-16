@@ -1,4 +1,5 @@
 
+![Screenshot_1](https://user-images.githubusercontent.com/77338263/208205534-f71c44f7-2fa5-4973-a1a9-6ef92c4d466c.png)
 
 <h1 align="center">Easybank Agency Landing Page</h1>
 
@@ -14,7 +15,7 @@
   </h3>
 </div>
 <div align="center">
-   Solution for a challenge from  <a href="https://www.frontendmentor.io/home" target="_blank">frontendmentor.io</a>.
+   Solution for a challenge from  <a href="https://www.frontendmentor.io/solutions/easybank-landing-page-zTv1H5hFBb" target="_blank">frontendmentor.io</a>.
 </div>
 <br>
 <br>
